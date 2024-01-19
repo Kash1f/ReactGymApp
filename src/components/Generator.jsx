@@ -1,12 +1,29 @@
-import React from 'react'
-import SectionWrapper from './SectionWrapper'
-const Generator = () => {
-  return (
+import React from "react";
+import SectionWrapper from "./SectionWrapper";
 
-   <SectionWrapper header={"generate your workout"} title={['It\'s', 'Huge', 'o\'clock']}>
-    
-   </SectionWrapper>
-  )
+function Header({ index, title, description }) {
+  return (
+    <div>
+      <div>
+        <p>{index}</p>
+        <h4>{title}</h4>
+      </div>
+      <p>{description}</p>
+    </div>
+  );
 }
 
-export default Generator
+const Generator = () => {
+  return (
+    <SectionWrapper
+      header={"generate your workout"}
+      title={["It's", "Huge", "o'clock"]}>
+
+      <Header index={'01'} title={'Pick your poison'}
+      description={"Select the Workout you wish to enjoy"}/>
+
+    </SectionWrapper>
+  );
+};
+
+export default Generator;
